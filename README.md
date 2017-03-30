@@ -1,0 +1,2 @@
+# hki5002_praktikumid
+Programmeerimine_I
