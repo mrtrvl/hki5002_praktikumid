@@ -3,6 +3,7 @@
 <head>
     <title>Käibemaksu arvutus</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script type="text/javascript">
         function calculate(){
             var currency = parseFloat(document.getElementById("currency").value);
@@ -15,12 +16,38 @@
     </script>
 </head>
 <body>
-<h1>Valuutavahetus</h1>
-<input type="text" id="currency" placeholder="valuuta"/><br>
-<input type="text" id="commission" placeholder="komisjonitasu"/><br>
-<input type="text" id="rate" placeholder="kurss"/><br>
-<input type="button" value="OK" onclick="calculate();" /><br>
-<div id="result">
-</div>
+    <div class="container">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <h1>Valuutavahetus</h1>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="currency" placeholder="valuuta"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="commission" placeholder="komisjonitasu"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="rate" placeholder="kurss"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <input type="button" class="btn btn-primary" value="OK" onclick="calculate();" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label id="result"></label>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
 </body>
 </html>
