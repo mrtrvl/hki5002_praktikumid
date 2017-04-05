@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Takso kalkulaator</title>
+    <script type="text/javascript">
+        var kosmos = true;
+        var sisseistumistasu = 2;
+        var kilomeetrihind = 0.8;
+        function changeBG() {
+            var ctx = document.getElementById("tahvel").getContext("2d");
+            if (kosmos == true) {
+                ctx.fillStyle = "#eeeeff";
+                sisseistumistasu = 2;
+                kilomeetrihind = 0.8;
+                ctx.fillRect(0, 0, 200, 300);
+                ctx.fillStyle = "yellow";
+                ctx.beginPath();
+                ctx.arc(70, 50, 20, 0, 2*Math.PI, true);
+                ctx.fill();
+            } else {
+                ctx.fillStyle = "black";
+                sisseistumistasu = 3;
+                kilomeetrihind = 1.2;
+                ctx.fillRect(0, 0, 200, 300);
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                ctx.arc(70, 50, 20, 0, 2*Math.PI, true);
+                ctx.fill();
+            }
+            document.getElementById("asd").innerHTML = sisseistumistasu;
+            document.getElementById("sdf").innerHTML = kilomeetrihind;
+        }
+        function day() {
+            kosmos = true;
+            changeBG();
+            calculate();
+        }
+        function night() {
+            kosmos = false;
+            changeBG();
+            calculate();
+        }
+        function calculate() {
+            var kilomeetrid = document.getElementById('km').value;
+            var kokku = kilomeetrid * kilomeetrihind + sisseistumistasu;
+            if (kilomeetrid != "") {
+                document.getElementById("vastus").innerHTML = "Sõidu maksumus: " + kokku + "€";
+            }
+        }
+    </script>
+    <style>
+        .btn-black {background-color:#000000;}
+        .white {color:#ffffff;}
+    </style>
+</head>
+<body onload="day(); ">
+    <div class="container">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <h1>Takso kalkulaator</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Sisseistumistasu: <span id="asd"></span>€</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Kilomeetrihind: <span id="sdf"></span>€</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <input type="button" class="btn btn-default" value="Päev" onclick="day(); ">
+                            <input type="button" class="btn btn-default btn-black white" value="Öö" onclick="night(); ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="km" placeholder="Sisesta kilomeetrid">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <input type="button" class="btn btn-primary" value="Arvuta" onclick="calculate();">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <span id="vastus"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <canvas id="tahvel" width="200" height="300"></canvas>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
