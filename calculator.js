@@ -19,7 +19,7 @@ class LeCalculator {
         this.layer = document.getElementById(layername);
         window[layername+"_calculator"] = this;
  		this.layer.innerHTML=
- 			"Raadius: <input type='text' id='"ˇ+ layername + "_box' /> "+
+ 			"Raadius: <input type='text' id='" + layername + "_box' /> " +
  			"<input type='button' value='Pindala' id='calc_" + layername + "' " +
  			"onClick='"+layername+"_calculator.calculate();' />" +
  			"<div id='"+layername+"_result'></div>";
@@ -52,7 +52,6 @@ class LeCalculator {
  			this.start();
  		}*/
 function begin(){
-    console.log("BEGIN is working");
     new LeCalculator("layer1");
     new LeCalculator("layer2");
     new LeCalculator("layer3");
