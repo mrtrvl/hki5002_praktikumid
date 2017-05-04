@@ -39,7 +39,6 @@
 //     }
 // }
 
-/* Üritasin ülemist tööle panna, ei saanud lõpuni jagu, kui aega leiab, siis uurib ehk uuesti */
 
 class LeCalculator {
     constructor(layername, label, button, coef) {
