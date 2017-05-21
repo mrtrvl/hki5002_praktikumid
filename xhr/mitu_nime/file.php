@@ -1,4 +1,3 @@
 <?php
 
-//echo "$_REQUEST[lastname], $_REQUEST[firstname] - ahoi!";
-echo "ploomid";
+echo "$_REQUEST[lastname], $_REQUEST[firstname] - ahoi!";
