@@ -1,3 +1,4 @@
 window.onload = () => {
-    new MituNime();
+    let mitunime = new MituNime();
+    console.log(mitunime);
 }

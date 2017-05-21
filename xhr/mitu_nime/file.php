@@ -1,3 +1,3 @@
 <?php
 
-echo "$_REQUEST[lastname], $_REQUEST[firstname] - ahoi!";
+echo "$_REQUEST[perenimi], $_REQUEST[eesnimi] - ahoi!";
